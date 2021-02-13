@@ -16,5 +16,8 @@
     "url": "https://github.com/IgorStatkevitch/backend-project-lvl2/issues"
   },
   "homepage": "https://github.com/IgorStatkevitch/backend-project-lvl2#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "commander": "^7.0.0"
+  }
 }
