@@ -1,0 +1,20 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "hexlet project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorStatkevitch/backend-project-lvl2.git"
+  },
+  "author": "Igor Statkevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorStatkevitch/backend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/IgorStatkevitch/backend-project-lvl2#readme",
+  "type": "module"
+}
