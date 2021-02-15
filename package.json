@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "hexlet project ",
   "main": "index.js",
+  "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +20,6 @@
     "url": "https://github.com/IgorStatkevitch/backend-project-lvl2/issues"
   },
   "homepage": "https://github.com/IgorStatkevitch/backend-project-lvl2#readme",
-  "type": "module",
   "dependencies": {
     "commander": "^7.0.0"
   }
