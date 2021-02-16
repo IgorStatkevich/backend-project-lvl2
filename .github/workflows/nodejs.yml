@@ -40,7 +40,7 @@ jobs:
         run: |
           make lint
       - name: Test & publish code coverage
-        # Publish code coverage on Code Climate
+        # Publish code coverage on CodeClimate
         # https://github.com/paambaati/codeclimate-action
         uses: paambaati/codeclimate-action@v2.7.4
         # Add Code Climate secret key
