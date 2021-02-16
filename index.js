@@ -15,9 +15,7 @@ const genDiff = (filepath1, filepath2) => {
           ? `    ${key}: ${file1[key]}`
           : `  - ${key}: ${file1[key]}\n  + ${key}: ${file2[key]}`;
       }
-      return hasProperty1
-        ? `  - ${key}: ${file1[key]}`
-        : `  + ${key}: ${file2[key]}`;
+      return hasProperty1 ? `  - ${key}: ${file1[key]}` : `  + ${key}: ${file2[key]}`;
     })
     .join('\n');
   return `{\n${entries}\n}`;
