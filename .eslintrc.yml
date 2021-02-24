@@ -17,4 +17,3 @@ rules:
   no-underscore-dangle: [2, { 'allow': ['__filename', '__dirname'] }]
   prettier/prettier:
     - error
-    - trailingComma: all
