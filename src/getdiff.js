@@ -19,19 +19,9 @@ const getDiff = (obj1, obj2) => {
       return { key, type: diffTypes.removed, newValue: obj1[key] };
     }
     if (obj1[key] === obj2[key]) {
-      return {
-        key,
-        type: diffTypes.equal,
-        newValue: obj2[key],
-        oldValue: obj1[key],
-      };
+      return { key, type: diffTypes.equal, newValue: obj2[key], oldValue: obj1[key] };
     }
-    return {
-      key,
-      type: diffTypes.changed,
-      newValue: obj2[key],
-      oldValue: obj1[key],
-    };
+    return { key, type: diffTypes.changed, newValue: obj2[key], oldValue: obj1[key] };
   });
   return result;
 };
