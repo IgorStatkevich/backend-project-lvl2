@@ -14,7 +14,9 @@ const getValue = (value) => {
 const printPlain = (data, ancestry = '') => {
   const result = data
     .map((item) => {
-      const { key, children, newValue, type, oldValue } = item;
+      const {
+        key, children, newValue, type, oldValue,
+      } = item;
       const curKey = ancestry === '' ? key : `${ancestry}.${key}`;
 
       switch (type) {
