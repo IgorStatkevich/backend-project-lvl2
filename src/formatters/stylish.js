@@ -12,9 +12,9 @@ const getDiffString = (level, symbol, key, value) => {
   return `${' '.repeat(level)}${symbol} ${key}: {\n${childValue}\n${' '.repeat(level + 2)}}`;
 };
 
-const printStylish = (diffObj, level = 0) => {
+const printStylish = (data, level = 0) => {
   const curLvl = level + 2;
-  const diffText = diffObj.map((item) => {
+  const diffText = data.map((item) => {
     const { key, type, children, newValue, oldValue } = item;
     switch (type) {
       case diffTypes.added:
@@ -38,4 +38,4 @@ const printStylish = (diffObj, level = 0) => {
   });
   return diffText.join('\n').replace(/, /gi, '\n ');
 };
-export default (diffObj) => `{\n${printStylish(diffObj)}\n}`;
+export default (data) => `{\n${printStylish(data)}\n}`;
