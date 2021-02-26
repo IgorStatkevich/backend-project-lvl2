@@ -33,9 +33,8 @@ const printStylish = (diffObj, level = 0) => {
         return `${' '.repeat(currentLevel + 2)}${key}: {\n${childrenObj}\n
         ${' '.repeat(currentLevel + 2)}}`;
       }
-      default: {
+      default:
         throw new Error('Unexpected value');
-      }
     }
   });
   return diffText.join('\n').replace(/, /gi, '\n ');
