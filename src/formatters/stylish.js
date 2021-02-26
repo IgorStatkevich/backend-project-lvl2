@@ -13,32 +13,29 @@ const getDiffString = (level, symbol, key, value) => {
 };
 
 const printStylish = (diffObj, level = 0) => {
-  const currentLevel = level + 2;
+  const curLvl = level + 2;
   const diffText = diffObj.map((item) => {
     const { key, type, children, newValue, oldValue } = item;
     switch (type) {
       case diffTypes.added:
-        return getDiffString(currentLevel, '+', key, newValue);
+        return getDiffString(curLvl, '+', key, newValue);
       case diffTypes.removed:
-        return getDiffString(currentLevel, '-', key, newValue);
+        return getDiffString(curLvl, '-', key, newValue);
       case diffTypes.equal:
-        return getDiffString(currentLevel, ' ', key, newValue);
+        return getDiffString(curLvl, ' ', key, newValue);
       case diffTypes.changed: {
-        const prev = getDiffString(currentLevel, '-', key, oldValue);
-        const next = getDiffString(currentLevel, '+', key, newValue);
+        const prev = getDiffString(curLvl, '-', key, oldValue);
+        const next = getDiffString(curLvl, '+', key, newValue);
         return `${prev}\n${next}`;
       }
       case diffTypes.nested: {
-        const childrenObj = printStylish(children, currentLevel + 2);
-        return `${' '.repeat(currentLevel + 2)}${key}: {\n${childrenObj}\n${' '.repeat(
-          currentLevel + 2
-        )}}`;
+        const childrenObj = printStylish(children, curLvl + 2);
+        return `${' '.repeat(curLvl + 2)}${key}: {\n${childrenObj}\n${' '.repeat(curLvl + 2)}}`;
       }
       default:
         throw new Error('Unexpected value');
     }
   });
-  const result = diffText.join('\n');
-  return result.replace(/, /gi, '\n ');
+  return diffText.join('\n').replace(/, /gi, '\n ');
 };
 export default (diffObj) => `{\n${printStylish(diffObj)}\n}`;
