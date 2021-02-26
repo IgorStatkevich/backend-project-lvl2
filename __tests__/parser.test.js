@@ -14,5 +14,5 @@ test('JSON parser', () => {
     proxy: '123.234.53.22',
     follow: false,
   };
-  expect(parse(getFixturePath('file1.json'))).toEqual(expected);
+  expect(parse(getFixturePath('parser-check.json'))).toEqual(expected);
 });

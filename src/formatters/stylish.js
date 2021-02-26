@@ -30,13 +30,15 @@ const printStylish = (diffObj, level = 0) => {
       }
       case diffTypes.nested: {
         const childrenObj = printStylish(children, currentLevel + 2);
-        return `${' '.repeat(currentLevel + 2)}${key}: {\n${childrenObj}\n
-        ${' '.repeat(currentLevel + 2)}}`;
+        return `${' '.repeat(currentLevel + 2)}${key}: {\n${childrenObj}\n${' '.repeat(
+          currentLevel + 2
+        )}}`;
       }
       default:
         throw new Error('Unexpected value');
     }
   });
-  return diffText.join('\n').replace(/, /gi, '\n ');
+  const result = diffText.join('\n');
+  return result.replace(/, /gi, '\n ');
 };
 export default (diffObj) => `{\n${printStylish(diffObj)}\n}`;
