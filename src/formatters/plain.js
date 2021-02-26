@@ -39,4 +39,4 @@ const printPlain = (data, ancestry = '') =>
     })
     .filter((item) => item)
     .join('\n');
-export default (diffObj) => printPlain(diffObj);
+export default (data) => printPlain(data);
