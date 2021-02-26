@@ -1,6 +1,6 @@
 import parse from './src/parser.js';
 import getDiff from './src/getdiff.js';
-import getFormatter from './src/formatters/formatter.js';
+import getFormatter from './src/formatters/index.js';
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const obj1 = parse(filepath1);
