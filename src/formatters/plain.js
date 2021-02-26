@@ -11,8 +11,8 @@ const getValue = (value) => {
   return value;
 };
 
-const printPlain = (data, ancestry = '') =>
-  data
+const printPlain = (data, ancestry = '') => {
+  const result = data
     .map((item) => {
       const { key, children, newValue, type, oldValue } = item;
       const curKey = ancestry === '' ? key : `${ancestry}.${key}`;
@@ -39,4 +39,6 @@ const printPlain = (data, ancestry = '') =>
     })
     .filter((item) => item)
     .join('\n');
+  return result;
+};
 export default (data) => printPlain(data);
